@@ -2,7 +2,7 @@ from flask import Flask, request
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, origins='http://localhost:3001')
+CORS(app, origins='http://localhost:3000')
 
 @app.route('/upload', methods=['POST'])
 def upload_image():
@@ -20,8 +20,6 @@ def upload_image():
     response = {'message': 'Image uploaded successfully', 'filename': 'uploaded_image.jpg'}
 
     return response
-
-# @app.route('/hello')
 
 if __name__ == '__main__':
     app.run()
