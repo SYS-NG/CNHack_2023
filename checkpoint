@@ -1,0 +1,2 @@
+model_checkpoint_path: "CNN_Alzheimer_Prediction"
+all_model_checkpoint_paths: "CNN_Alzheimer_Prediction"
