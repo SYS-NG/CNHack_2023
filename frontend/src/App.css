@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: purple;
+}
+
+.uploadBox {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.previewImage {
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.fileInput {
+  margin-bottom: 20px;
+}
+
+.uploadButton {
+  padding: 10px 20px;
+  background: purple;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
