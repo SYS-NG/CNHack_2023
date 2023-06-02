@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import './App.css';
+import Diagnosis from './components/Diagnosis'
+
 
 function App() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
+
+  const testData = [  
+    //switch according to actual data from backend
+    { bgcolor: "#c6abd6", completed: 60 },
+  ];
+
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -24,7 +32,7 @@ function App() {
     const formData = new FormData();
     formData.append('image', selectedFile);
 
-    fetch('http://localhost:5000/upload', {
+    fetch('http://localhost:3001/upload', {
       method: 'POST',
       body: formData
     })
@@ -44,12 +52,26 @@ function App() {
         {previewImage && (
           <img src={previewImage} alt="Preview" className="previewImage" />
         )}
-        <input type="file" onChange={handleFileChange} className="fileInput" />
-        <button onClick={handleUpload} className="uploadButton">
-          Upload Image
-        </button>
+
+
+<div className="centered">
+          <input type="file" onChange={handleFileChange} className="fileInput" />
+          <button onClick={handleUpload} className="uploadButton">
+            Upload Image
+          </button>
+        </div>
       </div>
+
+
+      <div className="data-output">
+      {testData.map((item, idx) => (
+        <Diagnosis key={idx} bgcolor={item.bgcolor} completed={item.completed} />
+      ))}
     </div>
+
+
+    </div>
+
   );
 }
 
