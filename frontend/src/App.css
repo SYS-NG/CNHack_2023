@@ -51,3 +51,14 @@
   align-items: center;
   justify-content: center;
 }
+
+.additionButton{
+  background: rgb(0, 0, 0);
+  color: white;
+  margin-top: 2%;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
